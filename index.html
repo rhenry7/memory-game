@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Memory Game</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <header>
+        <h1 class="timer"><time>00:00:00</time></h1>
+        <h1 class="title">Black History Memorization Game!</h1>
+        <nav>
+            <ul class="nav_links">
+
+                <li class="menu">
+                    <li>Scores</li>
+                    <li>About</li>
+                    <li>Portfolio</li>
+                </li>
+                <li class="difficulty">
+                    <li><button onclick="easyMode()">Easy</button></li>
+                    <li id="Medium">Medium</li>
+                    <li id="Hard">Hard</li>
+                </li>
+
+            </ul>
+        </nav>
+    </header>
+    <section class="memory-game">
+
+
+        <!-- Royal King -->
+        <div class="memory-card" data-name="RoyalKing" id="King">
+            <img src="img/faces/Layer 1.svg" alt="" class="front-face">
+            <img src="img/faces/back.svg" alt="" class="back-face">
+        </div>
+        <div class="memory-card" data-name="RoyalKing" id="King">
+            <img src="img/faces/Layer 1.svg" alt="" class="front-face">
+            <img src="img/faces/back.svg" alt="" class="back-face">
+        </div>
+
+        <!-- Two For Royal Queen-->
+        <div class="memory-card" data-name="RoyalQueen" class="Queen">
+            <img src="img/faces/Layer 2.svg" alt="RoyalQueen" class="front-face">
+            <img src="img/faces/back.svg" alt="" class="back-face">
+        </div>
+        <div class="memory-card" data-name="RoyalQueen" class="Queen">
+            <img src="img/faces/Layer 2.svg" alt="RoyalQueen" class="front-face">
+            <img src="img/faces/back.svg" alt="" class="back-face">
+        </div>
+
+        <!-- Two For Royal Jack -->
+        <div class="memory-card" data-name="RoyalJack" name="Jack">
+            <img src="img/faces/Layer 3.svg" alt="RoyalJack" class="front-face">
+            <img src="img/faces/back.svg" alt="" class="back-face">
+        </div>
+        <div class="memory-card" data-name="RoyalJack" name="Jack">
+            <img src="img/faces/Layer 3.svg" alt="RoyalJack" class="front-face">
+            <img src="img/faces/back.svg" alt="" class="back-face">
+        </div>
+
+        <!-- Two For Modern King -->
+        <div class="memory-card" data-name="ModernKing" class="King">
+            <img src="img/faces/Layer 4.svg" alt="ModernKing" class="front-face">
+            <img src="img/faces/back.svg" alt="" class="back-face">
+        </div>
+        <div class="memory-card" data-name="ModernKing" class="King">
+            <img src="img/faces/Layer 4.svg" alt="ModernKing" class="front-face">
+            <img src="img/faces/back.svg" alt="" class="back-face">
+        </div>
+
+        <!-- Two For Modern Queen -->
+        <div class="memory-card" data-name="Bishop" class="Queen">
+            <img src="img/faces/Layer 5.svg" alt="Bishop" class="front-face">
+            <img src="img/faces/back.svg" alt=" " class="back-face">
+        </div>
+
+        <div class="memory-card" data-name="Bishop" class="Queen">
+            <img src="img/faces/Layer 5.svg" alt="Bishop" class="front-face">
+            <img src="img/faces/back.svg" alt=" " class="back-face">
+        </div>
+
+        <!-- Two For Modern Jack -->
+        <div class="memory-card " data-name="ModernJack" name="Jack">
+            <img src="img/faces/Layer 6.svg " alt="ModernJack" class="front-face ">
+            <img src="img/faces/back.svg " alt=" " class="back-face ">
+        </div>
+        <div class="memory-card " data-name="ModernJack" name="Jack">
+            <img src="img/faces/Layer 6.svg " alt="ModernJack" class="front-face ">
+            <img src="img/faces/back.svg " alt=" " class="back-face ">
+        </div>
+
+        <!-- Two For Tribal King  -->
+        <div class="memory-card " data-name="TribalKing" class="King">
+            <img src="img/faces/Layer 7.svg " alt=" " class="front-face ">
+            <img src="img/faces/back.svg " alt=" " class="back-face ">
+        </div>
+        <div class="memory-card " data-name="TribalKing" class="King">
+            <img src="img/faces/Layer 7.svg " alt=" " class="front-face ">
+            <img src="img/faces/back.svg " alt=" " class="back-face ">
+        </div>
+
+        <!-- Two For Tribal Queen -->
+        <div class="memory-card " data-name="TribalQueen" class="Queen">
+            <img src="img/faces/Layer 8.svg " alt="TribalQueen " class="front-face ">
+            <img src="img/faces/back.svg " alt=" " class="back-face ">
+        </div>
+        <div class="memory-card " data-name="TribalQueen" class="Queen">
+            <img src="img/faces/Layer 8.svg " alt="TribalQueen " class="front-face ">
+            <img src="img/faces/back.svg " alt=" " class="back-face ">
+        </div>
+
+
+        <!-- Two For Timeless Jack -->
+        <div class="memory-card " data-name="TimelessJack" name="Jack">
+            <img src="img/faces/Layer 9.svg " alt="TimelessJack" class="front-face ">
+            <img src="img/faces/back.svg " alt=" " class="back-face ">
+        </div>
+        <div class="memory-card " data-name="TimelessJack" name="Jack">
+            <img src="img/faces/Layer 9.svg " alt="TimelessJack" class="front-face ">
+            <img src="img/faces/back.svg " alt=" " class="back-face ">
+        </div>
+
+        <!-- Two For Freedom King -->
+        <div class="memory-card " data-name="FreedomKing" class="King">
+            <img src="img/faces/Layer 10.svg " alt="FreedomKing" class="front-face ">
+            <img src="img/faces/back.svg " alt=" " class="back-face ">
+        </div>
+        <div class="memory-card " data-name="FreedomKing" class="King">
+            <img src="img/faces/Layer 10.svg " alt="FreedomKing" class="front-face ">
+            <img src="img/faces/back.svg " alt=" " class="back-face ">
+        </div>
+
+        <!-- Two For Primal Queen  -->
+        <div class="memory-card " data-name="PrimalQueen" class="Queen">
+            <img src="img/faces/Layer 11.svg " alt="PrimalQueen" class="front-face ">
+            <img src="img/faces/back.svg " alt=" " class="back-face ">
+        </div>
+        <div class="memory-card " data-name="PrimalQueen" class="Queen">
+            <img src="img/faces/Layer 11.svg " alt="PrimalQueen" class="front-face ">
+            <img src="img/faces/back.svg " alt=" " class="back-face ">
+        </div>
+
+        <!-- Two For History Jack -->
+        <div class="memory-card " data-name="History" name="Jack">
+            <img src="img/faces/Layer 12.svg " alt="History" class="front-face ">
+            <img src="img/faces/back.svg " alt=" " class="back-face ">
+        </div>
+        <div class="memory-card " data-name="History" name="Jack">
+            <img src="img/faces/Layer 12.svg " alt="History" class="front-face ">
+            <img src="img/faces/back.svg " alt=" " class="back-face ">
+        </div>
+
+    </section>
+
+
+    <audio id="flip " src="sounds/flip.wav"></audio>
+    <audio id="lose " src="sounds/lose.wav"></audio>
+    <audio id="success " src="sounds/success.wav"></audio>
+
+    <script src="scripts.js "></script>
+</body>
+
+</html>

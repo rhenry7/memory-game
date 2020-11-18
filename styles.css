@@ -1,0 +1,151 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,200;0,700;1,600&display=swap');
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    height: 50vh;
+    background-color: rgb(49, 135, 99);
+}
+
+li,
+a,
+button {
+    font-family: "Montserrat";
+    font-weight: 200;
+    font-size: 24px;
+    color: aliceblue;
+    text-decoration: none;
+    padding: 70px 10%;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: black;
+    padding: 12px;
+}
+
+h1 {
+    color: gold;
+    justify-content: flex-start;
+    align-items: flex-start;
+    font-family: "Montserrat";
+    font-weight: 200;
+}
+
+h1.title {
+    font-weight: 700;
+    color: rgb(255, 255, 255);
+}
+
+.cat {
+    margin-right: auto;
+}
+
+nav {
+    background-color: black;
+}
+
+.nav_links {
+    list-style: none;
+}
+
+.nav_links li {
+    display: inline-block;
+    padding: 0px 20px;
+    justify-content: flex-end;
+}
+
+.nav_links li a {
+    transition: all 0.3s ease 0s;
+}
+
+.nav_links li:hover {
+    color: gold;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+button {
+    padding: 9px 25px;
+    color: black;
+    font-weight: 700;
+    border-style: none;
+    transition: all 0.3s ease 0s;
+    border-radius: 8%;
+}
+
+button:hover {
+    padding: 9px 25px;
+    color: black;
+    font-weight: 700;
+    background-color: gold;
+    border-style: none;
+    transition: all 0.3s ease 0s;
+    border-radius: 8%;
+}
+
+button:active {
+    padding: 9px 25px;
+    color: black;
+    font-weight: 700;
+    background-color: gold;
+    border-style: none;
+    transition: all 0.3s ease 0s;
+    border-radius: 8%;
+}
+
+.memory-game {
+    width: 900px;
+    height: 500px;
+    margin: auto;
+    margin-top: 100px;
+    display: flex;
+    flex-wrap: wrap;
+    perspective: 1000px;
+}
+
+.memory-card {
+    width: 250px;
+    height: 150px;
+    margin: 8px;
+    padding: 10px;
+    padding-bottom: 15%;
+    position: relative;
+    flex: 1 10%;
+    transform: scale(1);
+    transform-style: preserve-3d;
+    transition: transform .5s;
+}
+
+.memory-card:active {
+    transform: scale(.97);
+    transition: transform .2s;
+}
+
+.memory-card:hover {
+    transform: scale(.87);
+    transition: transform .3s;
+}
+
+.memory-card.flip {
+    transform: rotateY(180deg);
+}
+
+.front-face,
+.back-face {
+    width: 100%;
+    height: 100%;
+    padding: 0px;
+    position: absolute;
+    border-radius: 5px;
+    backface-visibility: hidden;
+}
+
+.front-face {
+    transform: rotateY(180deg);
+}
