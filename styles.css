@@ -109,6 +109,10 @@ button:active {
     perspective: 1000px;
 }
 
+.Queen {
+    display: initial;
+}
+
 .memory-card {
     width: 250px;
     height: 150px;

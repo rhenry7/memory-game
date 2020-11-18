@@ -96,6 +96,7 @@ function stopTimer() {
 // add event listeners here  
 cards.forEach(card => card.addEventListener('click', flipCard));
 
+
 // this section is for the timer
 
 var h1 = document.getElementsByTagName('h1')[0],
@@ -148,15 +149,24 @@ clear.onclick = function() {
 // Set the difficulty , Easy, Medium, Hard
 
 
-let easyButton = document.getElementById("Easy");
-let mediumButton = document.getElementById("Medium");
-let hardButton = document.getElementById("Hard");
+// let easyButton = document.getElementById("Easy");
+// let mediumButton = document.getElementById("Medium");
+// let hardButton = document.getElementById("Hard");
 
 
-// easyButton.addEventListener("click", function() {
-//     jack.style.display = "none";
-//     king.style.display = "none";
-// });
+// function easyMode() {
+//     const jacks = document.getElementsByName('Jack');
+//     // console.log("The Button Was Clicked");
+//     // let jack = document.querySelectorAll(".Queen");
+//     // jack.display = "none";
+//     console.log("Hide the jack")
+//     for (let jack = 0; jack < jacks.length; jack++) {
+//         console.log(jacks[jack]);
+//         console.log('i was clicked');
+//         console.log("Hide the jacks");
+//     }
+// }
+
 
 // mediumButton.addEventListener("click", function() {
 //     king.style.display = "none";
@@ -169,14 +179,29 @@ let hardButton = document.getElementById("Hard");
 //     queen.style.display = "initial";
 // });
 
-function easyMode() {
-    let jack = document.getElementsByName("King");
-    for (var i = 0; i < jack.length; i++) {
-        jack[i].style.display = "none"; // depending on what you're doing
-    }
+
+// function easyMode() {
+//     cards.forEach(jack => {
+//         let jack = document.getElementsByClassName("Queen");
+//         jack.style.display = "none";
+//     })
+// }
+
+
+arr = document.getElementsByName("Jack");
+
+for (i = 0; i < arr.length; i++) {
+    window.console.log(arr[i]);
+    arr[i].style.display = "none";
 }
 
+function easyMode() {
+    arr = document.getElementsByName("Jack");
 
-function easy() {
-    document.getElements("King").style.display = "none";
+    for (i = 0; i < arr.length; i++) {
+        window.console.log(arr[i]);
+        console.log(arr[i]);
+        arr[i].style.display = "hidden";
+        style.display = "none";
+    }
 }
