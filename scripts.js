@@ -41,6 +41,8 @@ function checkForMatch() {
     if (isMatch) {
         let matchSound = new Audio('sounds/success.wav');
         matchSound.play();
+        console.log("Cards matched!")
+        window.alert("Black Lives Matter :)");
         disableCards();
     } else {
         unflipCards();
@@ -76,13 +78,15 @@ function resetBoard() {
     [firstCard, secondCard] = [null, null];
 }
 
-function stopTimer() {
-    let isMatch = firstCard.dataset.name === secondCard.dataset.name;
+// function stopTimer() {
+//     cards.forEach(card => {
+//                 let isMatch = firstCard.dataset.name === secondCard.dataset.name;
+//                 if (card === isMatch) {
+//                     clearTimeout(t);
+//                 }
+//             }
 
-    if (isMatch.length === 12) {
-        clearTimeout(t);
-    }
-}
+
 
 
 (function shuffle() {
@@ -147,61 +151,93 @@ clear.onclick = function() {
 }
 
 // Set the difficulty , Easy, Medium, Hard
-
-
-// let easyButton = document.getElementById("Easy");
-// let mediumButton = document.getElementById("Medium");
-// let hardButton = document.getElementById("Hard");
-
-
-// function easyMode() {
-//     const jacks = document.getElementsByName('Jack');
-//     // console.log("The Button Was Clicked");
-//     // let jack = document.querySelectorAll(".Queen");
-//     // jack.display = "none";
-//     console.log("Hide the jack")
-//     for (let jack = 0; jack < jacks.length; jack++) {
-//         console.log(jacks[jack]);
-//         console.log('i was clicked');
-//         console.log("Hide the jacks");
-//     }
-// }
-
-
-// mediumButton.addEventListener("click", function() {
-//     king.style.display = "none";
-// });
-
-// hardButton.addEventListener("click", function() {
-//     // empty .. should display everything 
-//     jack.style.display = "initial";
-//     king.style.display = "initial";
-//     queen.style.display = "initial";
-// });
-
-
-// function easyMode() {
-//     cards.forEach(jack => {
-//         let jack = document.getElementsByClassName("Queen");
-//         jack.style.display = "none";
-//     })
-// }
-
-
 arr = document.getElementsByName("Jack");
 
 for (i = 0; i < arr.length; i++) {
-    window.console.log(arr[i]);
-    arr[i].style.display = "none";
+    // window.console.log(arr[i]);
+    arr[i].style.display = "none"
 }
 
 function easyMode() {
-    arr = document.getElementsByName("Jack");
+    jack = document.getElementsByName("Jack");
 
-    for (i = 0; i < arr.length; i++) {
-        window.console.log(arr[i]);
-        console.log(arr[i]);
-        arr[i].style.display = "hidden";
-        style.display = "none";
+    for (i = 0; i < jack.length; i++) {
+        // window.console.log(jack[i]);
+        // console.log(jack[i]);
+        jack[i].style.display = "none";
+    }
+
+    king = document.getElementsByName("King");
+
+    for (i = 0; i < king.length; i++) {
+        // window.console.log(king[i]);
+        // console.log(king[i]);
+        king[i].style.display = "none";
     }
 }
+
+function mediumMode() {
+
+    jack = document.getElementsByName("Jack");
+
+    for (i = 0; i < jack.length; i++) {
+        // window.console.log(jack[i]);
+        // console.log(jack[i]);
+        jack[i].style.display = "initial";
+    }
+
+
+    king = document.getElementsByName("King");
+
+    for (i = 0; i < king.length; i++) {
+        // window.console.log(king[i]);
+        // console.log(king[i]);
+        king[i].style.display = "none";
+    }
+}
+
+
+function hardMode() {
+
+    jack = document.getElementsByName("Jack");
+
+    for (i = 0; i < jack.length; i++) {
+        // window.console.log(jack[i]);
+        // console.log(jack[i]);
+        jack[i].style.display = "initial";
+    }
+
+    king = document.getElementsByName("King");
+
+    for (i = 0; i < king.length; i++) {
+        // window.console.log(king[i]);
+        // console.log(king[i]);
+        king[i].style.display = "initial";
+    }
+    queen = document.getElementsByName("Queen");
+
+    for (i = 0; i < queen.length; i++) {
+        // window.console.log(queen[i]);
+        // console.log(queen[i]);
+        queen[i].style.display = "initial";
+    }
+}
+
+
+// Add active class to the current button (highlight it)
+// let header = document.getElementById("difficulty");
+// let buttons = header.getElementsByClassName("button");
+// for (let i = 0; i < buttons.length; i++) {
+//     buttons[i].addEventListener("click", function() {
+//         console.log("should be active");
+
+//         let current = document.getElementsByClassName("active");
+//         current[0].className = current[0].className.replace(" active", "");
+//         this.className += "active";
+//     });
+// }
+
+// $(document).ready(function() {
+//             $("button").click(function() {
+//                 $(".button").toggleClass("active");
+//             });

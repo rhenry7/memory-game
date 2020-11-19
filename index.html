@@ -8,6 +8,8 @@
     <title>Memory Game</title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
     <link rel="stylesheet" href="styles.css">
 </head>
 
@@ -15,18 +17,17 @@
     <header>
         <h1 class="timer"><time>00:00:00</time></h1>
         <h1 class="title">Black History Memorization Game!</h1>
-        <nav>
+        <nav id="difficulty">
             <ul class="nav_links">
 
                 <li class="menu">
                     <li>Scores</li>
-                    <li>About</li>
-                    <li>Portfolio</li>
+                    <li>Settings</li>
                 </li>
-                <li class="difficulty">
-                    <li><button onclick="easyMode()">Easy</button></li>
-                    <li id="Medium">Medium</li>
-                    <li id="Hard">Hard</li>
+                <li>
+                    <li><button onclick="easyMode()" class="button">Easy</button></li>
+                    <li> <button onclick="mediumMode()" class="button">Medium</button></li>
+                    <li> <button onclick="hardMode()" class="button">Hard</button></li>
                 </li>
 
             </ul>
@@ -36,21 +37,21 @@
 
 
         <!-- Royal King -->
-        <div class="memory-card" data-name="RoyalKing" id="King">
+        <div class="memory-card" data-name="RoyalKing" name="King">
             <img src="img/faces/Layer 1.svg" alt="" class="front-face">
             <img src="img/faces/back.svg" alt="" class="back-face">
         </div>
-        <div class="memory-card" data-name="RoyalKing" id="King">
+        <div class="memory-card" data-name="RoyalKing" name="King">
             <img src="img/faces/Layer 1.svg" alt="" class="front-face">
             <img src="img/faces/back.svg" alt="" class="back-face">
         </div>
 
         <!-- Two For Royal Queen-->
-        <div class="memory-card" data-name="RoyalQueen" class="Queen">
+        <div class="memory-card" data-name="RoyalQueen" name="Queen">
             <img src="img/faces/Layer 2.svg" alt="RoyalQueen" class="front-face">
             <img src="img/faces/back.svg" alt="" class="back-face">
         </div>
-        <div class="memory-card" data-name="RoyalQueen" class="Queen">
+        <div class="memory-card" data-name="RoyalQueen" name="Queen">
             <img src="img/faces/Layer 2.svg" alt="RoyalQueen" class="front-face">
             <img src="img/faces/back.svg" alt="" class="back-face">
         </div>
@@ -66,22 +67,22 @@
         </div>
 
         <!-- Two For Modern King -->
-        <div class="memory-card" data-name="ModernKing" class="King">
+        <div class="memory-card" data-name="ModernKing" name="King">
             <img src="img/faces/Layer 4.svg" alt="ModernKing" class="front-face">
             <img src="img/faces/back.svg" alt="" class="back-face">
         </div>
-        <div class="memory-card" data-name="ModernKing" class="King">
+        <div class="memory-card" data-name="ModernKing" name="King">
             <img src="img/faces/Layer 4.svg" alt="ModernKing" class="front-face">
             <img src="img/faces/back.svg" alt="" class="back-face">
         </div>
 
         <!-- Two For Modern Queen -->
-        <div class="memory-card" data-name="Bishop" class="Queen">
+        <div class="memory-card" data-name="Bishop" name="Queen">
             <img src="img/faces/Layer 5.svg" alt="Bishop" class="front-face">
             <img src="img/faces/back.svg" alt=" " class="back-face">
         </div>
 
-        <div class="memory-card" data-name="Bishop" class="Queen">
+        <div class="memory-card" data-name="Bishop" name="Queen">
             <img src="img/faces/Layer 5.svg" alt="Bishop" class="front-face">
             <img src="img/faces/back.svg" alt=" " class="back-face">
         </div>
@@ -97,21 +98,21 @@
         </div>
 
         <!-- Two For Tribal King  -->
-        <div class="memory-card " data-name="TribalKing" class="King">
+        <div class="memory-card " data-name="TribalKing" name="King">
             <img src="img/faces/Layer 7.svg " alt=" " class="front-face ">
             <img src="img/faces/back.svg " alt=" " class="back-face ">
         </div>
-        <div class="memory-card " data-name="TribalKing" class="King">
+        <div class="memory-card " data-name="TribalKing" name="King">
             <img src="img/faces/Layer 7.svg " alt=" " class="front-face ">
             <img src="img/faces/back.svg " alt=" " class="back-face ">
         </div>
 
         <!-- Two For Tribal Queen -->
-        <div class="memory-card " data-name="TribalQueen" class="Queen">
+        <div class="memory-card " data-name="TribalQueen" name="Queen">
             <img src="img/faces/Layer 8.svg " alt="TribalQueen " class="front-face ">
             <img src="img/faces/back.svg " alt=" " class="back-face ">
         </div>
-        <div class="memory-card " data-name="TribalQueen" class="Queen">
+        <div class="memory-card " data-name="TribalQueen" name="Queen">
             <img src="img/faces/Layer 8.svg " alt="TribalQueen " class="front-face ">
             <img src="img/faces/back.svg " alt=" " class="back-face ">
         </div>
@@ -128,21 +129,21 @@
         </div>
 
         <!-- Two For Freedom King -->
-        <div class="memory-card " data-name="FreedomKing" class="King">
+        <div class="memory-card " data-name="FreedomKing" name="King">
             <img src="img/faces/Layer 10.svg " alt="FreedomKing" class="front-face ">
             <img src="img/faces/back.svg " alt=" " class="back-face ">
         </div>
-        <div class="memory-card " data-name="FreedomKing" class="King">
+        <div class="memory-card " data-name="FreedomKing" name="King">
             <img src="img/faces/Layer 10.svg " alt="FreedomKing" class="front-face ">
             <img src="img/faces/back.svg " alt=" " class="back-face ">
         </div>
 
         <!-- Two For Primal Queen  -->
-        <div class="memory-card " data-name="PrimalQueen" class="Queen">
+        <div class="memory-card " data-name="PrimalQueen" name="Queen">
             <img src="img/faces/Layer 11.svg " alt="PrimalQueen" class="front-face ">
             <img src="img/faces/back.svg " alt=" " class="back-face ">
         </div>
-        <div class="memory-card " data-name="PrimalQueen" class="Queen">
+        <div class="memory-card " data-name="PrimalQueen" name="Queen">
             <img src="img/faces/Layer 11.svg " alt="PrimalQueen" class="front-face ">
             <img src="img/faces/back.svg " alt=" " class="back-face ">
         </div>
@@ -163,7 +164,6 @@
     <audio id="flip " src="sounds/flip.wav"></audio>
     <audio id="lose " src="sounds/lose.wav"></audio>
     <audio id="success " src="sounds/success.wav"></audio>
-
     <script src="scripts.js "></script>
 </body>
 
