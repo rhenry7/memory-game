@@ -14,15 +14,17 @@
 
 <body>
     <header>
+
         <h1 class="timer"><time>00:00:00</time></h1>
         <h1 class="title">Black History Memorization Game!</h1>
+
         <nav id="difficulty">
             <ul class="nav_links">
 
                 <li class="menu">
                     <li>Scores</li>
                     <li>Settings</li>
-                    <li class="buttons">
+                    <li id="buttons">
                         <button onclick="easyMode()" class="button">Easy</button>
                         <button onclick="mediumMode()" class="button">Medium</button>
                         <button onclick="hardMode()" class="button active">Hard</button>
@@ -36,7 +38,18 @@
 
             </ul>
         </nav>
+        <script>
+            $("button").click(function() {
+                console.log("jQuery button clicked")
+
+                $(this).toggleClass('active').siblings().removeClass('active');;
+            });
+        </script>
     </header>
+    <p>If you click on me, I will disappear.</p>
+    <p>Click me away!</p>
+    <p>Click me too!</p>
+
     <section class="memory-game">
 
 

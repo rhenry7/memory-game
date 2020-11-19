@@ -159,6 +159,7 @@ for (i = 0; i < arr.length; i++) {
 }
 
 function easyMode() {
+
     jack = document.getElementsByName("Jack");
 
     for (i = 0; i < jack.length; i++) {
@@ -174,10 +175,7 @@ function easyMode() {
         // console.log(king[i]);
         king[i].style.display = "none";
     }
-    console.log("button clicked")
-    $('.button').click(function() {
-        $(this).toggleClass('active');
-    });
+
 
 }
 
@@ -227,25 +225,4 @@ function hardMode() {
         queen[i].style.display = "initial";
     }
 
-    $('.button').click(function() {
-        $(this).toggleClass('active');
-        console.log("button clicked")
-    });
 }
-
-$('.buttons').on('click', '.button', function() {
-    $(this).addClass('active').siblings().removeClass('active');
-});
-
-$('.button').click(function() {
-    $(this).toggleClass('active');
-    console.log("button clicked")
-});
-
-document.getElementById("buttons")
-    .addEventListener("click", function() {
-        console.log("button clicked!");
-        if (this.classList.contains("active")) {
-            this.classList.remove("active");
-        } else this.classList.add("active");
-    });
