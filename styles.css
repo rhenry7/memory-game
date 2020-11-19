@@ -87,6 +87,7 @@ button:hover {
     border-style: none;
     transition: all 0.3s ease 0s;
     border-radius: 8%;
+    cursor: pointer;
 }
 
 .active {
@@ -124,16 +125,20 @@ button-active {
 }
 
 .memory-card {
+    /* width: 250px;
+    height: 150px;
+    margin: 7px; */
     width: 250px;
     height: 150px;
-    margin: 8px;
-    padding: 10px;
-    padding-bottom: 15%;
+    margin: 0px;
+    /* padding-bottom: 15%; */
     position: relative;
-    flex: 1 10%;
+    flex: 1 12%;
     transform: scale(1);
     transform-style: preserve-3d;
     transition: transform .5s;
+    padding: 1px;
+    /* box-shadow: 8px 10px 2px 1px rgba(27, 27, 27, 0.2); */
 }
 
 .memory-card:active {
@@ -156,7 +161,7 @@ button-active {
     height: 100%;
     padding: 0px;
     position: absolute;
-    border-radius: 5px;
+    border-radius: 2px;
     backface-visibility: hidden;
 }
 

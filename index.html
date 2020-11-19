@@ -38,11 +38,17 @@
 
             </ul>
         </nav>
+        <script>
+            $("button").click(function() {
+                console.log("jQuery button clicked")
+
+                $(this).toggleClass('active').siblings().removeClass('active');;
+            });
+        </script>
 
     </header>
-    <p>If you click on me, I will disappear.</p>
-    <p>Click me away!</p>
-    <p>Click me too!</p>
+    <!-- <p> The rules are simple! Match the cards with the corresponding family and suit! Have fun :)</p> -->
+
 
     <section class="memory-game">
 
