@@ -174,6 +174,11 @@ function easyMode() {
         // console.log(king[i]);
         king[i].style.display = "none";
     }
+    console.log("button clicked")
+    $('.button').click(function() {
+        $(this).toggleClass('active');
+    });
+
 }
 
 function mediumMode() {
@@ -221,23 +226,26 @@ function hardMode() {
         // console.log(queen[i]);
         queen[i].style.display = "initial";
     }
+
+    $('.button').click(function() {
+        $(this).toggleClass('active');
+        console.log("button clicked")
+    });
 }
 
+$('.buttons').on('click', '.button', function() {
+    $(this).addClass('active').siblings().removeClass('active');
+});
 
-// Add active class to the current button (highlight it)
-// let header = document.getElementById("difficulty");
-// let buttons = header.getElementsByClassName("button");
-// for (let i = 0; i < buttons.length; i++) {
-//     buttons[i].addEventListener("click", function() {
-//         console.log("should be active");
+$('.button').click(function() {
+    $(this).toggleClass('active');
+    console.log("button clicked")
+});
 
-//         let current = document.getElementsByClassName("active");
-//         current[0].className = current[0].className.replace(" active", "");
-//         this.className += "active";
-//     });
-// }
-
-// $(document).ready(function() {
-//             $("button").click(function() {
-//                 $(".button").toggleClass("active");
-//             });
+document.getElementById("buttons")
+    .addEventListener("click", function() {
+        console.log("button clicked!");
+        if (this.classList.contains("active")) {
+            this.classList.remove("active");
+        } else this.classList.add("active");
+    });

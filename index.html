@@ -9,7 +9,6 @@
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-
     <link rel="stylesheet" href="styles.css">
 </head>
 
@@ -23,12 +22,17 @@
                 <li class="menu">
                     <li>Scores</li>
                     <li>Settings</li>
+                    <li class="buttons">
+                        <button onclick="easyMode()" class="button">Easy</button>
+                        <button onclick="mediumMode()" class="button">Medium</button>
+                        <button onclick="hardMode()" class="button active">Hard</button>
+                    </li>
                 </li>
-                <li>
-                    <li><button onclick="easyMode()" class="button">Easy</button></li>
-                    <li> <button onclick="mediumMode()" class="button">Medium</button></li>
-                    <li> <button onclick="hardMode()" class="button">Hard</button></li>
-                </li>
+
+
+
+
+
 
             </ul>
         </nav>
@@ -165,6 +169,8 @@
     <audio id="lose " src="sounds/lose.wav"></audio>
     <audio id="success " src="sounds/success.wav"></audio>
     <script src="scripts.js "></script>
+
+
 </body>
 
 </html>
