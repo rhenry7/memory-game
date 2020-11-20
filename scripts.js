@@ -3,12 +3,17 @@ const cards = document.querySelectorAll('.memory-card');
 let hasFlippedCard = false;
 let lockBoard = false;
 let firstCard, secondCard;
+let matches = 0;
+let moves = 0;
+
+
 
 // main flip function
 function flipCard() {
     //toggle to change the state, change the side of the card
     if (lockBoard) return;
     if (this === firstCard) return;
+
 
     this.classList.toggle('flip');
 
@@ -33,22 +38,29 @@ function flipCard() {
 
 function checkForMatch() {
     // check if cards match 
-
     let isMatch = firstCard.dataset.name === secondCard.dataset.name;
 
     // isMatch ? disableCards(), document.getElementById('success').play();: unflipCards();
 
     if (isMatch) {
         let matchSound = new Audio('sounds/success.wav');
+        matches++;
         matchSound.play();
-        console.log("Cards matched!")
-        window.alert("Black Lives Matter :)");
+        console.log("Cards matched! ...from isMatch")
+        console.log(matches)
+            // window.alert("Black Lives Matter :)");
         disableCards();
     } else {
         unflipCards();
     }
-
     console.log('Function was executed!')
+        // if($"button","easy","active")
+        // easy = document.querySelector("button");
+        // if (easy.addEventListener.classList = )
+    if (matches == 4) {
+        clearTimeout(t);
+        window.alert("Congratulations! You won! Black Lives Matter <3")
+    }
 }
 
 function disableCards() {
@@ -72,29 +84,30 @@ function unflipCards() {
     }, 1500);
 }
 
-
 function resetBoard() {
     [hasFlippedCard, lockBoard] = [false, false];
     [firstCard, secondCard] = [null, null];
 }
 
-// function stopTimer() {
-//     cards.forEach(card => {
-//                 let isMatch = firstCard.dataset.name === secondCard.dataset.name;
-//                 if (card === isMatch) {
-//                     clearTimeout(t);
-//                 }
-//             }
-
-
-
-
 (function shuffle() {
     cards.forEach(card => {
         let randomPos = Math.floor(Math.random() * 12);
         card.style.order = randomPos;
+        // reset the matches to 0, so the stop timer condition works 
+        matches = 0;
     });
 })();
+
+
+function gameOver() {
+    flippedCard = document.getElementsByClassName(".memory-card")
+    for (i = 0; i < flippedCard.length; i++) {
+        window.alert("Game over baby!");
+        if (flippedCard[i].style.display = true) {
+            clearTimeout(t);
+        }
+    }
+}
 
 
 // add event listeners here  
@@ -102,8 +115,7 @@ cards.forEach(card => card.addEventListener('click', flipCard));
 
 
 // this section is for the timer
-
-var h1 = document.getElementsByTagName('h1')[0],
+let h1 = document.getElementsByTagName('h1')[0],
     start = document.getElementById('start'),
     stop = document.getElementById('stop'),
     clear = document.getElementById('clear'),
@@ -159,25 +171,16 @@ for (i = 0; i < arr.length; i++) {
 }
 
 function easyMode() {
-
     jack = document.getElementsByName("Jack");
-
     for (i = 0; i < jack.length; i++) {
-        // window.console.log(jack[i]);
-        // console.log(jack[i]);
         jack[i].style.display = "none";
     }
-
     king = document.getElementsByName("King");
-
     for (i = 0; i < king.length; i++) {
-        // window.console.log(king[i]);
-        // console.log(king[i]);
         king[i].style.display = "none";
     }
-
-
 }
+
 
 function mediumMode() {
 

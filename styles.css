@@ -7,7 +7,7 @@
 
 body {
     height: 50vh;
-    background-color: rgb(49, 135, 99);
+    background: green;
 }
 
 li,
@@ -25,7 +25,7 @@ header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background-color: black;
+    background-color: rgba(14, 0, 43, 0.264);
     padding: 15px;
 }
 
@@ -42,12 +42,8 @@ h1.title {
     color: rgb(255, 255, 255);
 }
 
-.cat {
-    margin-right: auto;
-}
-
 nav {
-    background-color: black;
+    /* background-color: rgba(14, 0, 43, 0.264); */
 }
 
 .nav_links {
@@ -100,14 +96,34 @@ button:hover {
     border-radius: 8%;
 }
 
-button-active {
-    padding: 5px 15px;
-    color: black;
-    font-weight: 700;
-    background-color: rgb(0, 255, 115);
-    border-style: none;
-    transition: all 0.3s ease 0s;
-    border-radius: 8%;
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    color: white;
+    background-color: #000000;
+    min-width: 360px;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+    padding: 12px 16px;
+    z-index: 1;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+.score {
+    font-size: 18px;
+}
+
+.music {
+    width: 18px;
+    height: 18px;
+    margin-left: 10px;
 }
 
 .memory-game {

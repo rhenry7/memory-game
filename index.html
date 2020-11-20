@@ -20,20 +20,32 @@
 
         <nav id="difficulty">
             <ul class="nav_links">
-
-                <li class="menu">
-                    <li>Scores</li>
+                <div class="dropdown">
+                    <li class="menu">
+                        <li>Scores</li>
+                        <div class="dropdown-content">
+                            <li class="score">Ramone Henry 0:00:10</li>
+                            <li class="score">John Wolfgang Green 0:01:10</li>
+                            <li class="score">Richard Parker 0:02:10</li>
+                            <li class="score">Stanley Morrison 0:01:10</li>
+                        </div>
+                </div>
+                <div class="dropdown">
                     <li>Settings</li>
-                    <li id="buttons">
-                        <button onclick="easyMode()" class="button">Easy</button>
-                        <button onclick="mediumMode()" class="button">Medium</button>
-                        <button onclick="hardMode()" class="button active">Hard</button>
-                    </li>
+                    <div class="dropdown-content">
+                        <li>Tribal Music </li>
+                        <li>Modern Music</li>
+                        <li>Jazz Music</li>
+                        <li>Reggae Music</li>
+                    </div>
+                </div>
+
+                <li id="buttons">
+                    <button onclick="easyMode()" class="easy button">Easy</button>
+                    <button onclick="mediumMode()" class="medium button">Medium</button>
+                    <button onclick="hardMode()" class="hard button active">Hard</button>
                 </li>
-
-
-
-
+                </li>
 
 
             </ul>
@@ -41,18 +53,13 @@
         <script>
             $("button").click(function() {
                 console.log("jQuery button clicked")
-
                 $(this).toggleClass('active').siblings().removeClass('active');;
             });
         </script>
-
     </header>
+
     <!-- <p> The rules are simple! Match the cards with the corresponding family and suit! Have fun :)</p> -->
-
-
     <section class="memory-game">
-
-
         <!-- Royal King -->
         <div class="memory-card" data-name="RoyalKing" name="King">
             <img src="img/faces/Layer 1.svg" alt="" class="front-face">
