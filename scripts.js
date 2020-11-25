@@ -5,6 +5,9 @@ let lockBoard = false;
 let firstCard, secondCard;
 let matches = 0;
 let moves = 0;
+let audio = new Audio("sounds/background.mp3")
+
+
 
 
 
@@ -25,6 +28,7 @@ function flipCard() {
         let flip = new Audio('sounds/flip.wav');
         flip.play();
         return;
+
     }
     // second click 
     hasFlippedCard = false;
@@ -57,9 +61,14 @@ function checkForMatch() {
         // if($"button","easy","active")
         // easy = document.querySelector("button");
         // if (easy.addEventListener.classList = )
+
+    // this matches == 4 only works with easy mode on
+    // end game, for easy mode
     if (matches == 4) {
         clearTimeout(t);
         window.alert("Congratulations! You won! Black Lives Matter <3")
+        lockBoard = true;
+        audio.pause();
     }
 }
 
@@ -229,3 +238,19 @@ function hardMode() {
     }
 
 }
+
+
+function backgroundMusic() {
+    let musicButton = document.querySelector('active');
+    if (musicButton.classList.contains('active')) {
+        audio.play();
+
+    }
+}
+
+
+// maybe this is the solve? button on click, toggle active state,
+// if active, music play, else, audio.pause()
+
+// const div = document.querySelector('div');
+// div.classList.toggle('show');
