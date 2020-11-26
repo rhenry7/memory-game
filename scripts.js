@@ -3,9 +3,12 @@ const cards = document.querySelectorAll('.memory-card');
 let hasFlippedCard = false;
 let lockBoard = false;
 let firstCard, secondCard;
+let audio = new Audio("sounds/background.mp3")
 let matches = 0;
 let moves = 0;
-let audio = new Audio("sounds/background.mp3")
+let EASY_WIN = 4
+let MEDIUM_WIN = 8
+let HARD_WIN = 12
 
 
 
@@ -58,18 +61,40 @@ function checkForMatch() {
         unflipCards();
     }
     console.log('Function was executed!')
-        // if($"button","easy","active")
-        // easy = document.querySelector("button");
-        // if (easy.addEventListener.classList = )
+        // this matches == 4 only works with easy mode on
+        // end game, for easy mode
 
-    // this matches == 4 only works with easy mode on
-    // end game, for easy mode
+    // $(".easy.button.active")
+
     if (matches == 4) {
         clearTimeout(t);
         window.alert("Congratulations! You won! Black Lives Matter <3")
         lockBoard = true;
         audio.pause();
     }
+
+    /* 
+
+
+    the following section is supposed to stop the game depending on which button/difficulty is active 
+
+
+        if (matches == EASY_WIN & $(".easy.button.active")) {
+            clearTimeout(t);
+            window.alert("Congratulations! You won! Black Lives Matter <3")
+            lockBoard = true;
+            audio.pause();
+        }
+
+        if (matches == MEDIUM_WIN & $(".medium.button.active")) {
+            clearTimeout(t);
+            window.alert("Congratulations! You won! Black Lives Matter <3")
+            lockBoard = true;
+            audio.pause();
+        } 
+        
+        */
+
 }
 
 function disableCards() {
@@ -171,15 +196,8 @@ clear.onclick = function() {
     hours = 0;
 }
 
-// Set the difficulty , Easy, Medium, Hard
-arr = document.getElementsByName("Jack");
-
-for (i = 0; i < arr.length; i++) {
-    // window.console.log(arr[i]);
-    arr[i].style.display = "none"
-}
-
 function easyMode() {
+    let easyButton = document.getElementsByClassName("easy button active");
     jack = document.getElementsByName("Jack");
     for (i = 0; i < jack.length; i++) {
         jack[i].style.display = "none";
@@ -188,6 +206,13 @@ function easyMode() {
     for (i = 0; i < king.length; i++) {
         king[i].style.display = "none";
     }
+
+    // if (matches == 4 && $(".easy.button.active")) {
+    //     clearTimeout(t);
+    //     window.alert("Congratulations! You won! Black Lives Matter <3")
+    //     lockBoard = true;
+    //     audio.pause();
+    // }
 }
 
 
@@ -209,6 +234,8 @@ function mediumMode() {
         // console.log(king[i]);
         king[i].style.display = "none";
     }
+
+
 }
 
 
