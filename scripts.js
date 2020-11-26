@@ -3,7 +3,6 @@ const cards = document.querySelectorAll('.memory-card');
 let hasFlippedCard = false;
 let lockBoard = false;
 let firstCard, secondCard;
-let audio = new Audio("sounds/background.mp3")
 let matches = 0;
 let moves = 0;
 let EASY_WIN = 4
@@ -66,7 +65,28 @@ function checkForMatch() {
 
     // $(".easy.button.active")
 
-    if (matches == 4) {
+    // if (matches == 4) {
+    //     clearTimeout(t);
+    //     window.alert("Congratulations! You won! Black Lives Matter <3")
+    //     lockBoard = true;
+    //     audio.pause();
+    // }
+
+    if (matches == EASY_WIN && $(".easy").hasclass("active")) {
+        clearTimeout(t);
+        window.alert("Congratulations! You won! Black Lives Matter <3")
+        lockBoard = true;
+        audio.pause();
+    }
+
+    if (matches == MEDIUM_WIN && $(".medium").hasclass("active")) {
+        clearTimeout(t);
+        window.alert("Congratulations! You won! Black Lives Matter <3")
+        lockBoard = true;
+        audio.pause();
+    }
+
+    if (matches == HARD_WIN && $(".hard").hasclass("active")) {
         clearTimeout(t);
         window.alert("Congratulations! You won! Black Lives Matter <3")
         lockBoard = true;
@@ -268,16 +288,7 @@ function hardMode() {
 
 
 function backgroundMusic() {
-    let musicButton = document.querySelector('active');
-    if (musicButton.classList.contains('active')) {
-        audio.play();
+    let audio = new Audio("sounds/background.mp3")
+    audio.play();
 
-    }
 }
-
-
-// maybe this is the solve? button on click, toggle active state,
-// if active, music play, else, audio.pause()
-
-// const div = document.querySelector('div');
-// div.classList.toggle('show');
