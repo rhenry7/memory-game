@@ -9,19 +9,13 @@ let EASY_WIN = 4
 let MEDIUM_WIN = 8
 let HARD_WIN = 12
 
-
-
-
-
 // main flip function
 function flipCard() {
     //toggle to change the state, change the side of the card
     if (lockBoard) return;
     if (this === firstCard) return;
 
-
     this.classList.toggle('flip');
-
 
     if (!hasFlippedCard) {
         // first click 
@@ -30,7 +24,6 @@ function flipCard() {
         let flip = new Audio('sounds/flip.wav');
         flip.play();
         return;
-
     }
     // second click 
     hasFlippedCard = false;
@@ -38,6 +31,7 @@ function flipCard() {
     flip.play();
     secondCard = this;
 
+    // end
     checkForMatch();
 }
 
@@ -46,24 +40,17 @@ function checkForMatch() {
     // check if cards match 
     let isMatch = firstCard.dataset.name === secondCard.dataset.name;
 
-    // isMatch ? disableCards(), document.getElementById('success').play();: unflipCards();
-
     if (isMatch) {
         let matchSound = new Audio('sounds/success.wav');
         matches++;
         matchSound.play();
         console.log("Cards matched! ...from isMatch")
         console.log(matches)
-            // window.alert("Black Lives Matter :)");
         disableCards();
     } else {
         unflipCards();
     }
     console.log('Function was executed!')
-        // this matches == 4 only works with easy mode on
-        // end game, for easy mode
-
-    // $(".easy.button.active")
 
     // if (matches == 4) {
     //     clearTimeout(t);
@@ -72,21 +59,17 @@ function checkForMatch() {
     //     audio.pause();
     // }
 
-    if (matches == EASY_WIN && $(".easy").hasclass("active")) {
+    if (matches == EASY_WIN && $(".easy").hasClass("active")) {
         clearTimeout(t);
         window.alert("Congratulations! You won! Black Lives Matter <3")
         lockBoard = true;
         audio.pause();
-    }
-
-    if (matches == MEDIUM_WIN && $(".medium").hasclass("active")) {
+    } else if (matches == MEDIUM_WIN && $(".medium").hasClass("active")) {
         clearTimeout(t);
         window.alert("Congratulations! You won! Black Lives Matter <3")
         lockBoard = true;
         audio.pause();
-    }
-
-    if (matches == HARD_WIN && $(".hard").hasclass("active")) {
+    } else if (matches == HARD_WIN && $(".hard").hasClass("active")) {
         clearTimeout(t);
         window.alert("Congratulations! You won! Black Lives Matter <3")
         lockBoard = true;
