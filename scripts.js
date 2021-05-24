@@ -3,8 +3,10 @@ const cards = document.querySelectorAll('.memory-card');
 let hasFlippedCard = false;
 let lockBoard = false;
 let firstCard, secondCard;
+
 let matches = 0;
 let moves = 0;
+
 let EASY_WIN = 4
 let MEDIUM_WIN = 8
 let HARD_WIN = 12
@@ -187,9 +189,9 @@ timer();
 // start.onclick = timer;
 
 /* Stop button */
-stop.onclick = function() {
-    clearTimeout(t);
-}
+// stop.onclick = function() {
+//     clearTimeout(t);
+// }
 
 /* Clear button */
 clear.onclick = function() {
