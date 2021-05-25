@@ -11,6 +11,11 @@ let EASY_WIN = 4
 let MEDIUM_WIN = 8
 let HARD_WIN = 12
 
+window.onload = function() {
+    easyMode();
+    true;
+};
+
 // main flip function
 function flipCard() {
     //toggle to change the state, change the side of the card
@@ -202,7 +207,7 @@ clear.onclick = function() {
 }
 
 function easyMode() {
-    let easyButton = document.getElementsByClassName("easy button active");
+    // let easyButton = document.getElementsByClassName("easy button active");
     jack = document.getElementsByName("Jack");
     for (i = 0; i < jack.length; i++) {
         jack[i].style.display = "none";
